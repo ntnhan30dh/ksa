@@ -28,11 +28,11 @@ const OurStory = props => {
   return (
     <section className="ourStory ">
       <Img fluid={data.banner.childImageSharp.fluid} className="banner" />
-      <div className="bottomDiv text-charcoal  lg:flex justify-items-center	 wrap justify-center items-stretch w-full p-10 md:p-16 lg:p-20 xl:p-44 2xl:p-60">
-        <div className="text lg:w-1/2 lg:px-10 lg:flex flex-col items-start justify-between">
+      <div className="bottomDiv text-charcoal  lg:flex justify-items-center	 wrap justify-center items-stretch w-full p-10 md:p-16 lg:p-20 xl:p-44 2xl:p-72">
+        <div className="text lg:w-1/2 lg:pr-10 lg:flex flex-col items-start justify-between">
         {/* <div className="topText  "> */}
           <h1 className="text-2xl sm:text-2xl lg:text-3xl ">Our Story</h1>
-          <p className="sm:text-lg lg:text-lg xl:w-4/5">
+          <p className="sm:text-lg lg:text-lg 2xl:w-4/5">
             DH Kitchens KSA works with restaurant partners in operating kitchens
             optimized for delivery, revolutionizing the food market. DH Kitchens
             KSA uses data to locate the most suitable areas. We cooperate with
