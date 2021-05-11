@@ -19,7 +19,7 @@ module.exports = {
         charcoal: "#343b46",
         black: "#2a2c2a",
         lipstick: "#d61f26",
-        yellow: "#ffd250",
+        lightGrey: "rgba(245, 245, 246, 0.5)",
         pink: "#DF1995",
         blue: " #2CCCD3"
       },

@@ -1,20 +1,11 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import risk from "../images/logo_risk.png"
 import expansion from "../images/logo_expansion.png"
+import next from "../images/next.png"
+import previous from "../images/previous.png"
 import Slider from "react-slick"
-
-const settings = {
-  dots: true,
-  infinite: true,
-  // fade: true,
-  speed: 0,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: false,
-  autoplaySpeed: 4000,
-}
 
 const WhyUS = () => {
   const data = useStaticQuery(graphql`
@@ -28,8 +19,9 @@ const WhyUS = () => {
       }
     }
   `)
- //creating the ref
-  const customeSlider = useRef();
+
+  //creating the ref
+  const customeSlider = useRef()
   const gotoNext = () => {
     customeSlider.current.slickNext()
   }
@@ -37,41 +29,87 @@ const WhyUS = () => {
   const gotoPrev = () => {
     customeSlider.current.slickPrev()
   }
-  const logoDiv = " w-20 h-20 my-10"
-  const whyUs = "text-2xl sm:text-2xl lg:text-3xl pt-10"
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    fade: true,
+    speed: 0,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    appendDots: dots => {
+      return (
+        <div className="w-full">
+          <div className="w-0 md:w-1/2"></div>
+          <ul className=" md:w-1/2">
+            <button onClick={() => gotoPrev()}>
+              {" "}
+              <div className={arrowDiv}>
+                <img src={previous} alt="arrow" />
+              </div>
+            </button>
+            {dots}
+            <button onClick={() => gotoNext()}>
+              <div className={arrowDiv}>
+                <img src={next} alt="arrow" />
+              </div>
+            </button>
+          </ul>
+        </div>
+      )
+    },
+  }
+
+  const logoDiv = " w-20 h-20 lg:my-10"
+  const whyUs = "text-2xl sm:text-2xl lg:text-3xl pt-10 md:pt-0"
+  const arrowDiv = "w-6"
+  const slide = "md:flex"
+  const imgWrapper = "w-full md:w-1/2 pr-12 lg:pr-20"
+  const img = "w-full  "
+  const text = " w-1/2"
+  const p = "mdd:w-1/2 pb-12"
 
   return (
-    <section className="WhyUsContainer w-full px-10 md:px-16 lg:px-20 xl:px-44 2xl:px-72   ">
-      <Slider  {...settings} ref={customeSlider} className=" ">
-        <div className="slide">
-          <Img fluid={data.whyUs.childImageSharp.fluid} className="w-full" />
-          <div className="text">
-            <h1 className={whyUs}> Why Us</h1>
-            <div className={logoDiv}>
-              <img src={risk} alt="logo" />
+    <section className="WhyUsContainer w-full px-10 md:px-16 lg:px-20 xl:px-44 2xl:px-72 pb-44 pt-20 ">
+      <Slider {...settings} ref={customeSlider} className=" ">
+        <div>
+          <div className={slide}>
+            <div className={imgWrapper}>
+              <Img fluid={data.whyUs.childImageSharp.fluid} className={img} />
             </div>
-            <h4>Low Risk Imvestment</h4>
-            <p>
-              We invest in great locations and manage all legal checks and
-              processes.
-            </p>
-          
-           
+            <div className={text}>
+              <h1 className={whyUs}> Why Us</h1>
+              <div className={logoDiv}>
+                <img src={risk} alt="logo" />
+              </div>
+              <h4>Low Risk Imvestment</h4>
+              <p className={p}>
+                We invest in great locations and manage all legal checks and
+                processes.
+              </p>
+            </div>
           </div>
         </div>
-
-        <div className="slide">
-          <Img fluid={data.whyUs.childImageSharp.fluid} className="w-full" />
-          <div className="text">
-            <h1 className={whyUs}> Why Us</h1>
-            <img src={expansion} alt="logo" />
-            <h4>Rapid Expansion</h4>
-            <p>Easily expand to high growth hyper local areas</p>
+        <div>
+          <div className={slide}>
+            <div className={imgWrapper}>
+              <Img fluid={data.whyUs.childImageSharp.fluid} className={img} />
+            </div>
+            <div className={text}>
+              <h1 className={whyUs}> Why Us</h1>
+              <div className={logoDiv}>
+                <img src={expansion} alt="logo" />
+              </div>
+              <h4>Rapid Expansion</h4>
+              <p className={p}>
+                Easily expand to high growth hyper local areas
+              </p>
+            </div>
           </div>
         </div>
       </Slider>
-        <button onClick={()=>gotoNext()}>Next</button>
-      <button onClick={()=>gotoPrev()}>Previous</button>
     </section>
   )
 }

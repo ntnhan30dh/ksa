@@ -5,47 +5,34 @@
    
     // next button
     .slick-next {
-      right: 15px;
-      bottom: 0;
+     display: none !important;
     }
     .slick-prev {
-      left: 10px;
-      z-index: 10;
-      bottom: 0 !important;
+     display: none !important;
     }
 
-    .slick-prev:before,
-            .slick-next:before {
-              //font-family: "slick";
-              font-size: 30px;
-              font-weight: lighter;
-              line-height: 1;
-              color: gray;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-            }
-
-            // .slick-prev:before {
-            //   content: "<";
-            // }
-            // [dir="rtl"] .slick-prev:before {
-            //   content: ">";
-            // }
-
-            // [dir="rtl"] .slick-next {
-            //   left: -10px;
-            //   top: 70px;
-            //   right: auto;
-            // }
-            // .slick-next:before {
-            //   content: ">";
-            // }
-            // [dir="rtl"] .slick-next:before {
-            //   content: "<";
-            // }
+   
     .slick-dots{
-      bottom: 0;
+     bottom: 0;
+     display: flex;
+     justify-content: center;
+     ul{
+     display: flex;
+
+     }
     }
+
+    .slick-dots li button:before{
+      font-size: 50px;
+      line-height: 0;
+      content: '-';
+      font-weight: lighter;
+    }
+
+    .slick-dots li.slick-active button::before {
+      opacity: 0.75;
+      color: #D61F26;
+  }
   }
 }
 
