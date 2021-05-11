@@ -11,21 +11,18 @@ import "semantic-ui-css/semantic.min.css"
 // import Plx from "react-plx"
 
 export default function Home() {
-  // let [menuActive, setmenuActive] = useState(false)
-  // let [vh, setVh] = useState(0);
-
-  // const toggleMenu = () => {
-  //   setmenuActive(!menuActive)
-  // }
-
+  let [menuActive, setmenuActive] = useState(false);
+  const toggleMenu = () => {
+		setmenuActive(!menuActive)
+    }
+   
   return (
     <div className="pageWrapper ">
       <head>
         <title>DH Kitchens KSA</title>
       </head>
-
-      <Header />
-      <OurStory />
+      <Header toggleMenu={toggleMenu} menuState={menuActive}/>
+      <OurStory toggleMenu={toggleMenu} menuState={menuActive}/>
       <How />
       <WhyUs />
       <Footer />

@@ -17,16 +17,22 @@
      display: flex;
      justify-content: center;
      ul{
-     display: flex;
+     display: flex !important;
+   //  align-items: center;
+    // justify-content: center;
 
      }
     }
 
     .slick-dots li button:before{
-      font-size: 50px;
-      line-height: 0;
+      //position: relative;
+      font-size: 60px;
+      //line-height: initial;
       content: '-';
       font-weight: lighter;
+      top: -7px;
+      font-family: 'Open Sans', sans-serif !important;
+
     }
 
     .slick-dots li.slick-active button::before {
@@ -41,20 +47,3 @@
  //background-size: 100% !important;
 }
 
-@keyframes MoveUp {
-   0% {
-    transform: translateY(+100px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadein {
-  0% {
-   opacity:  0;
- }
- 100% {
-  opacity:  1;
- }
-}

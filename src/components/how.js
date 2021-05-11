@@ -13,7 +13,7 @@ const How = () => {
    const h4 ="pt-6"
   return (
     <section
-      className="howContainer text-charcoal w-full px-10 md:px-16 lg:px-20 xl:px-44 2xl:px-72 bg-lightGrey py-20 lg:my-20"
+      className="howContainer text-charcoal w-full px-10 md:px-16 lg:px-20 xl:px-44 2xl:px-72 bg-lightGrey py-10 xsm:py-20 lg:my-20"
       id="how"
     >
       <h1 className="text-2xl sm:text-2xl lg:text-3xl  2xl:pt-0"> How It Works</h1>

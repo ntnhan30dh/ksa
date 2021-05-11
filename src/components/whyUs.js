@@ -67,7 +67,7 @@ const WhyUS = () => {
 
   const logoDiv = " w-20 h-20 lg:my-10"
   const whyUs = "text-2xl sm:text-2xl lg:text-3xl pt-10 md:pt-0"
-  const arrowDiv = "w-6"
+  const arrowDiv = "w-6 "
   const slide = "md:flex"
   const imgWrapper = "w-full md:w-1/2 pr-12 lg:pr-20"
   const img = "w-full  "
@@ -75,7 +75,7 @@ const WhyUS = () => {
   const p = "lg:w-1/2 pb-12 "
 
   return (
-    <section className="WhyUsContainer w-full px-10 md:px-16 lg:px-20 xl:px-44 2xl:px-72 pb-44 pt-20 ">
+    <section className="WhyUsContainer w-full px-10 md:px-16 lg:px-20 xl:px-44 2xl:px-72 pb-28 lg:pb-44 pt-20 " id="why">
       <Slider {...settings} ref={customeSlider} className=" ">
         <div>
           <div className={slide}>
