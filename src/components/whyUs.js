@@ -3,6 +3,9 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import risk from "../images/logo_risk.png"
 import expansion from "../images/logo_expansion.png"
+import growth from "../images/logo_growth.png"
+import eco from "../images/logo_eco.png"
+import strength from "../images/logo_strength.png"
 import next from "../images/next.png"
 import previous from "../images/previous.png"
 import Slider from "react-slick"
@@ -68,8 +71,8 @@ const WhyUS = () => {
   const slide = "md:flex"
   const imgWrapper = "w-full md:w-1/2 pr-12 lg:pr-20"
   const img = "w-full  "
-  const text = " w-1/2"
-  const p = "mdd:w-1/2 pb-12"
+  const text = " md:w-1/2"
+  const p = "lg:w-1/2 pb-12 "
 
   return (
     <section className="WhyUsContainer w-full px-10 md:px-16 lg:px-20 xl:px-44 2xl:px-72 pb-44 pt-20 ">
@@ -109,6 +112,58 @@ const WhyUS = () => {
             </div>
           </div>
         </div>
+
+        <div>
+          <div className={slide}>
+            <div className={imgWrapper}>
+              <Img fluid={data.whyUs.childImageSharp.fluid} className={img} />
+            </div>
+            <div className={text}>
+              <h1 className={whyUs}> Why Us</h1>
+              <div className={logoDiv}>
+                <img src={growth} alt="logo" />
+              </div>
+              <h4>Focused on Growth</h4>
+              <p className={p}>
+              Detailed data driven insights on optimal menu, pricing and order growth              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className={slide}>
+            <div className={imgWrapper}>
+              <Img fluid={data.whyUs.childImageSharp.fluid} className={img} />
+            </div>
+            <div className={text}>
+              <h1 className={whyUs}> Why Us</h1>
+              <div className={logoDiv}>
+                <img src={eco} alt="logo" />
+              </div>
+              <h4>Better Economics</h4>
+              <p className={p}>
+              Better Economics              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className={slide}>
+            <div className={imgWrapper}>
+              <Img fluid={data.whyUs.childImageSharp.fluid} className={img} />
+            </div>
+            <div className={text}>
+              <h1 className={whyUs}> Why Us</h1>
+              <div className={logoDiv}>
+                <img src={strength} alt="logo" />
+              </div>
+              <h4>Strength of Kitchens KSA Platforms</h4>
+              <p className={p}>
+              Boost your brand visibility online and enjoy additional revenue streams introduced uniquely to each  brand             </p>
+            </div>
+          </div>
+        </div>
+
       </Slider>
     </section>
   )

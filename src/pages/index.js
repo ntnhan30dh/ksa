@@ -3,8 +3,7 @@ import Header from "../components/header"
 import OurStory from "../components/ourStory"
 import How from "../components/how"
 import WhyUs from "../components/whyUs"
-// import Footer from "../components/footer"
-// import OrderNow from "../components/ordernow"
+ import Footer from "../components/footer"
 import "../styles/index.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -29,6 +28,7 @@ export default function Home() {
       <OurStory />
       <How />
       <WhyUs />
+      <Footer />
     </div>
   )
 }
