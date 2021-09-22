@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, {useRef} from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import risk from "../images/logo_risk.png"
@@ -13,7 +13,7 @@ import Slider from "react-slick"
 const WhyUS = () => {
   const data = useStaticQuery(graphql`
     {
-      whyUs: file(relativePath: { eq: "whyUs_lowRisk.png" }) {
+      whyUs: file(relativePath: { eq: "whyUs.jpeg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1000) {
             ...GatsbyImageSharpFluid_withWebp

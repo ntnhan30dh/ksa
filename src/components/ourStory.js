@@ -1,12 +1,29 @@
-import React from "react"
+import React, {useRef} from "react"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
+import Slider from "react-slick"
 
 const OurStory = props => {
   const data = useStaticQuery(graphql`
     {
-      banner: file(relativePath: { eq: "bg.png" }) {
+      banner1: file(relativePath: { eq: "homePage1.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 2000) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+
+      banner2: file(relativePath: { eq: "homePage2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 2000) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+
+      banner3: file(relativePath: { eq: "homePage3.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 2000) {
             ...GatsbyImageSharpFluid_withWebp
@@ -24,9 +41,37 @@ const OurStory = props => {
     }
   `)
 
+  //creating the ref
+  const customeSlider = useRef()
+  // const gotoNext = () => {
+  //   customeSlider.current.slickNext()
+  // }
+
+  // const gotoPrev = () => {
+  //   customeSlider.current.slickPrev()
+  // }
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    fade: true,
+    speed: 0,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+  
+  }
+
   return (
+
+    
     <section className="ourStory " >
-      <Img fluid={data.banner.childImageSharp.fluid} className="banner" />
+    <Slider {...settings} ref={customeSlider} className=" ">
+      <Img fluid={data.banner1.childImageSharp.fluid} className="banner" />
+      <Img fluid={data.banner2.childImageSharp.fluid} className="banner" />
+      <Img fluid={data.banner3.childImageSharp.fluid} className="banner" />
+      </Slider>
       <div className="bottomDiv text-charcoal  lg:flex justify-items-center	 wrap justify-center items-stretch w-full p-10 md:p-16 lg:p-20 xl:p-44 ">
         <div className="text lg:w-1/2 lg:pr-10 lg:flex flex-col items-start justify-between">
         {/* <div className="topText  "> */}
